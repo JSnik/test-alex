@@ -1,0 +1,169 @@
+<div class="home">
+  <mat-card class="block">
+    <header>
+      <div class="left-content">
+        <h3 class="main-h">All Organizations ({{arrGlob.length}})</h3>
+        <div class="input" style="position: relative">
+          <form action="" [formGroup]="form">
+            <input type="text" placeholder="Search organization" class="search"
+                   formControlName="search"
+                   (keyup.enter)="search()"
+            >
+          </form>
+          <img
+            (click)="search()"
+            style="position: absolute;
+            right: 10px;
+            top: 6px;
+            height: 17px;
+            cursor: pointer"
+            src="data:image/png;base64,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" alt="">
+        </div>
+      </div>
+      <div class="btn-add">
+        <button mat-icon-button (click)="showHelp($event)">
+          Add New Organization
+        </button>
+      </div>
+      <h3 class="none">All Organizations ({{arrGlob.length}})</h3>
+    </header>
+    <div class="line"></div>
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-restyle" *ngFor="let item of arrGlob; let i = index" style="overflow:unset !important;">
+          <mat-card class="example-card">
+            <div class="header-card-flex">
+              <div class="header-card">
+                <div class="avatar">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANEAAACcCAMAAADWIr5vAAAApVBMVEX////lGTgAAADlFjbkAB/iAAAPDw/zsLb//P3wlJvkAC3kACbjABrxnKLqbXHvj5f2v8PjAA/64+X87+/ypazraHPoT17vipP+9vb62dvxoKfuhY3lDjLy8vLscnzg4ODU1NTnQlRjY2OVlZWBgYHGxsY2NjYdHR1SUlKrq6u3t7ehoaHp6el2dnYnJyf40NTnNklFRUXpX2boVlruj47mOkHlKz70tcQzAAAEUUlEQVR4nO3a7XaiMBAGYCQiCNKiUKs2CAVRoPi5u73/S9sEdCshKFZ6OLLz/GmlI8wrEENOBQEAAAAAAAAAAAAAAAAAAAAAAAAAALSFctR0H/eyE8cNgjj68P1Fyvc/ojgIXCd5wGyKG/lrbykSm30YeqkwXPbIhtXeW/ix03SLt/H2G9J6uIgdJ0nsM4njBNGaJl3uo6a7vEW8Wcc2OVM0hOO4rku22a5L8pEN9JJLIq9nN9zkbRSBnAs/u+yoSFC846+rcO3HbiI82L1k+1mYXuite72euIl9kfxYrr19lmsfNN3irZy92BP3Lr3MQppls6LBfIXcSdGKJFo81jWXilZekv5Cz05GzE5MsFw+2Eh3ZB/bDr4S2bk/PCz3lEhcPuClxkNvqSzR+sHGtzL2+pQobrqVupyGBvHhRuwyUZZI3LhNd1KXYJMlCpOmO6mLE6YnSVw03Uh9vCzRR9N91Ccb7FatGeoE4UNMv1/dpvuoj5sNDC2ZMVBKOvH2mm6jTkv6QOE33UWd6NDQnhkDFYv/HiVaIiEPtKumm6iX2LKBQRBCsU0zBsoXRbfpHuoViO0aGOhaQ1vWGE6c5aIlawwntvdQ6/ZV+K2aMVCx23QHdUtaNjAAAAAA/yXlssqllY/DbL63xUL15Ll/yat5VmuV1z4buV2busWY6UdyrnCqW7PZ9nKgSV8v1R8Vy+dSt5w0Pk+kl5cO5dxep9KAddqjnis0yC6Hs8uJBDwsPSw2i+XbDu6UwZqRq/1USwq7TxMmUVnhId+CMSRHsa4k2kqIvzfEfJBHMlL5b0Cqynx6JtIwKsLaL+ajShMVC1WNCUQToauJBLnLaxGp3T6/3jgg7QinJ+b04pfBlo7mO7VoN58wdTQRwgjndcbPhWNXSiTI439dfVHfS99oGnJmNsYdvNOPr4ziXScoW7moeGfTRHhusIo7rJjoq8VznP5Ykxe1o44rFF5DE6n69brKib7LhERlINGPuZLo91M5ZipAx7p3bqGeGxcrJTKqHvbmRPKQM3RnBvmBPv0+wtzCl9sT6VLZYYdv9yUSxt2SqYD2VnHO0NHmtyeaDUr3dm8i8zDgTZnwcM6852ESCWa/KxVpOjtfnHKqCPX7iVDhwENcRyLyJTwqYudAZGphckymZEryzUSoY00Zxg7Xkugeo7H67USoMMecvkOi+kGik59LZL0+l3k12F2b0/4r422HOInIY4fMrkoQ8tf4+XOJLqwzSMwBle2LNGCL6AMlJxHSCosSg4F09pz/c4mUXdk6g/bCjODWp1b1G5YL4bMEdyXS0KX7aKRpnGUGhLQ/zHvkAW89Ii1lE3GrsHS+gjAbIH4i1L2aaI476HBpzvD0WWwVfx7Yg0kleaom+pMbLO5INNnKhmEUpwBnKq0z8BYFTvJDyMjiFuU/1KnFW1QwyUZr27L/lAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAefwGwrYBPvT91RwAAAABJRU5ErkJggg==" alt="">
+                </div>
+                <div class="title">
+                  <h3 >{{item?.name}}</h3>
+                </div>
+              </div>
+              <div class="down-drop">
+                <div class="three-dots" (click)="openDrop(i)">
+                  <img src="data:image/jpeg;base64,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" alt="">
+                </div>
+                <div class="drop" *ngIf="globalIndex === i && isOpenedDropD"
+                [class.drop-third]="(i + 1) % 3 == 0">
+                  <div>
+                    <img src="https://cdn5.vectorstock.com/i/1000x1000/95/69/edit-icon-pencil-icon-sign-up-icon-vector-30669569.jpg" alt="">
+                    <span>Edit</span></div>
+                  <div>
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <span>Go to Organization</span></div>
+                  <div class="last-border" (click)="delete(i)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNTf2PKBXILaIs5xYXYAEk6h1HPzUuuq3qMQ&usqp=CAU" alt="">
+                    <span>Delete Organization</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="line small"></div>
+            <mat-card-content>
+              <div class="content-header">
+                <h5>Licenses</h5>
+              </div>
+              <div class="bottom-section">
+                <div class="row">
+                  <div class="col-md-6 space-from-border">
+                    <h6>Tracking</h6>
+                    <div class="cont">
+                      <div class="flex first">
+                        <div>
+                          <span>In use:</span>
+                        </div>
+                        <div class="value">
+                          <span>{{item?.trackingFirst}}</span>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div>
+                          <span>Assigned</span>:
+                        </div>
+                        <div class="value">
+                          <input type="number" class="costum-input" maxlength="3"  [(ngModel)]="item.trackingSecond" >
+                          <div class="counter">
+                            <img (click)="counter(item.trackingSecond, true, i, 'first')" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0SDQ0REA0NEA8QDQ0NEBANDQ8NDRANFREiFxUTExMaHSggGCYlJxgVLTEhJSowLy4xIyYzOjg4QzQ5OjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQcIBgUEA//EADYQAQABAwEECAMFCQAAAAAAAAABAgMEEQUGQWEHEiEiMVFVkxcycRMUI0KBCBUkM1JikeHw/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANwCQAAAAAAAAAAA1AAAAAAAAAAAAAAAFABJAAAAAAAAAAAAAAAAAAAAAAAAAAABQASQAAAAAAAAAAAAAAAAAAAAAAAAAAAUAEAAAAAAAAAAAAAAAAAAAAAAAAAAABQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAFABAkAAAAAAAAAAAeb3331wtl2KLmRNdVVyqabVm1FM3bkx80xEzEREaxrM+cPs7V2jZxse9fvVxRZs26rlyqeFMcIjjM8I4y5J353pvbSz7uTc1ijWbdi1wtY8T3afrxmeMzIOkdxOkTA2rNyizFyzft09eqzf6vXm3rp16JiZ60RMxE8YewcXbv7ayMLLs5WPX1btqvrRr201U+FVFUcYmNYl11upvDj5+FZyrE925Heome9bux89urnE/5jSeIPrgAAAAAAAAAAAoAJISAAAAAAAAAAzvpl36jZ+H9hYr0zsmiYo0nvWbHhVd5T4xTz1ngDO+nTfr7zkTs/Hr/hsa5+PVTPdvZMfl500dv1q18olkqoA9/wBEG/M7Nzfs71U/csmqii9rPZZueFN6I5fm8489IeAAdw01RMRMTExMaxMdsTHJWP8AQPv1F6zGzcmv8ezRM4tVU9tzHpjtt85o4f2/RsAAAAAAAAAAAKACSAAAAAAAABM/95A+XvNt3HwcK/lX50t2qNerGnWrrnspt085nSHIu8u3MjOzL+Vfq1uXa9dNe7RRHy0U8ojSHsOmPfn94Zn2NivXBxaqqbc0z3b97wqvc48Yp5azxZ2AAAAD9Gz827YvWr1muq3dtV03LddPjTXE6xP+nW24G9lraeBbyKdKbtP4eRaif5d+I7f0nxjlP1cgvWdGu+NzZm0KLvbVjXerayrcfmta/PEf1U+MfrHEHWw/li5Nu7bt3LddNdq5RTcoronWmuiqNYmJ5v6gAAAAAAAAoAIAAAAAAAAyjp430rxcanAsVTTfy7c1Xa48aMTXqzEc65iY+kT5w1d4DpP6NaNqzYu0ZEWMm1TNrrVUTct3LMzrFNUROsTEzOk85/QOXBsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bhHQBmepY3s3AY2NkjoAzPUsb2bh8AMz1LG9m4D9f7P++lfWnZV+qZpmK7uJVPbNOneuWvp41R5dvnDc2YdG3RNGzcucu/lU371NFVFmm3bmi3b60aVVzMzrVOmsRHDWfHhp4AAAAAAAAKACAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAIAAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkgAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z" alt="">
+                            <img  (click)="counter(item.trackingSecond, false, i, 'first')" class="second-arrow" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0SDQ0REA0NEA8QDQ0NEBANDQ8NDRANFREiFxUTExMaHSggGCYlJxgVLTEhJSowLy4xIyYzOjg4QzQ5OjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQcIBgUEA//EADYQAQABAwEECAMFCQAAAAAAAAABAgMEEQUGQWEHEiEiMVFVkxcycRMUI0KBCBUkM1JikeHw/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANwCQAAAAAAAAAAA1AAAAAAAAAAAAAAAFABJAAAAAAAAAAAAAAAAAAAAAAAAAAABQASQAAAAAAAAAAAAAAAAAAAAAAAAAAAUAEAAAAAAAAAAAAAAAAAAAAAAAAAAABQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAFABAkAAAAAAAAAAAeb3331wtl2KLmRNdVVyqabVm1FM3bkx80xEzEREaxrM+cPs7V2jZxse9fvVxRZs26rlyqeFMcIjjM8I4y5J353pvbSz7uTc1ijWbdi1wtY8T3afrxmeMzIOkdxOkTA2rNyizFyzft09eqzf6vXm3rp16JiZ60RMxE8YewcXbv7ayMLLs5WPX1btqvrRr201U+FVFUcYmNYl11upvDj5+FZyrE925Heome9bux89urnE/5jSeIPrgAAAAAAAAAAAoAJISAAAAAAAAAAzvpl36jZ+H9hYr0zsmiYo0nvWbHhVd5T4xTz1ngDO+nTfr7zkTs/Hr/hsa5+PVTPdvZMfl500dv1q18olkqoA9/wBEG/M7Nzfs71U/csmqii9rPZZueFN6I5fm8489IeAAdw01RMRMTExMaxMdsTHJWP8AQPv1F6zGzcmv8ezRM4tVU9tzHpjtt85o4f2/RsAAAAAAAAAAAKACSAAAAAAAABM/95A+XvNt3HwcK/lX50t2qNerGnWrrnspt085nSHIu8u3MjOzL+Vfq1uXa9dNe7RRHy0U8ojSHsOmPfn94Zn2NivXBxaqqbc0z3b97wqvc48Yp5azxZ2AAAAD9Gz827YvWr1muq3dtV03LddPjTXE6xP+nW24G9lraeBbyKdKbtP4eRaif5d+I7f0nxjlP1cgvWdGu+NzZm0KLvbVjXerayrcfmta/PEf1U+MfrHEHWw/li5Nu7bt3LddNdq5RTcoronWmuiqNYmJ5v6gAAAAAAAAoAIAAAAAAAAyjp430rxcanAsVTTfy7c1Xa48aMTXqzEc65iY+kT5w1d4DpP6NaNqzYu0ZEWMm1TNrrVUTct3LMzrFNUROsTEzOk85/QOXBsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bhHQBmepY3s3AY2NkjoAzPUsb2bh8AMz1LG9m4D9f7P++lfWnZV+qZpmK7uJVPbNOneuWvp41R5dvnDc2YdG3RNGzcucu/lU371NFVFmm3bmi3b60aVVzMzrVOmsRHDWfHhp4AAAAAAAAKACAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAIAAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkgAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 bot">
+                    <h6>Protection</h6>
+                    <div class="cont">
+                      <div class="flex first">
+                        <div>
+                          <span>In use:</span>
+                        </div>
+                        <div class="value">
+                          <span>{{item?.protectionFirst}}</span>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div>
+                          <span>Assigned</span>:
+                        </div>
+                        <div class="value">
+                          <input type="number" class="costum-input" maxlength="3"  [(ngModel)]="item.protectionSecond" >
+                          <div class="counter">
+                            <img (click)="counter(item.protectionSecond, true, i, 'second')" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0SDQ0REA0NEA8QDQ0NEBANDQ8NDRANFREiFxUTExMaHSggGCYlJxgVLTEhJSowLy4xIyYzOjg4QzQ5OjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQcIBgUEA//EADYQAQABAwEECAMFCQAAAAAAAAABAgMEEQUGQWEHEiEiMVFVkxcycRMUI0KBCBUkM1JikeHw/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANwCQAAAAAAAAAAA1AAAAAAAAAAAAAAAFABJAAAAAAAAAAAAAAAAAAAAAAAAAAABQASQAAAAAAAAAAAAAAAAAAAAAAAAAAAUAEAAAAAAAAAAAAAAAAAAAAAAAAAAABQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAFABAkAAAAAAAAAAAeb3331wtl2KLmRNdVVyqabVm1FM3bkx80xEzEREaxrM+cPs7V2jZxse9fvVxRZs26rlyqeFMcIjjM8I4y5J353pvbSz7uTc1ijWbdi1wtY8T3afrxmeMzIOkdxOkTA2rNyizFyzft09eqzf6vXm3rp16JiZ60RMxE8YewcXbv7ayMLLs5WPX1btqvrRr201U+FVFUcYmNYl11upvDj5+FZyrE925Heome9bux89urnE/5jSeIPrgAAAAAAAAAAAoAJISAAAAAAAAAAzvpl36jZ+H9hYr0zsmiYo0nvWbHhVd5T4xTz1ngDO+nTfr7zkTs/Hr/hsa5+PVTPdvZMfl500dv1q18olkqoA9/wBEG/M7Nzfs71U/csmqii9rPZZueFN6I5fm8489IeAAdw01RMRMTExMaxMdsTHJWP8AQPv1F6zGzcmv8ezRM4tVU9tzHpjtt85o4f2/RsAAAAAAAAAAAKACSAAAAAAAABM/95A+XvNt3HwcK/lX50t2qNerGnWrrnspt085nSHIu8u3MjOzL+Vfq1uXa9dNe7RRHy0U8ojSHsOmPfn94Zn2NivXBxaqqbc0z3b97wqvc48Yp5azxZ2AAAAD9Gz827YvWr1muq3dtV03LddPjTXE6xP+nW24G9lraeBbyKdKbtP4eRaif5d+I7f0nxjlP1cgvWdGu+NzZm0KLvbVjXerayrcfmta/PEf1U+MfrHEHWw/li5Nu7bt3LddNdq5RTcoronWmuiqNYmJ5v6gAAAAAAAAoAIAAAAAAAAyjp430rxcanAsVTTfy7c1Xa48aMTXqzEc65iY+kT5w1d4DpP6NaNqzYu0ZEWMm1TNrrVUTct3LMzrFNUROsTEzOk85/QOXBsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bhHQBmepY3s3AY2NkjoAzPUsb2bh8AMz1LG9m4D9f7P++lfWnZV+qZpmK7uJVPbNOneuWvp41R5dvnDc2YdG3RNGzcucu/lU371NFVFmm3bmi3b60aVVzMzrVOmsRHDWfHhp4AAAAAAAAKACAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAIAAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkgAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z" alt="">
+                            <img  (click)="counter(item.protectionSecond, false, i, 'second')" class="second-arrow" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0SDQ0REA0NEA8QDQ0NEBANDQ8NDRANFREiFxUTExMaHSggGCYlJxgVLTEhJSowLy4xIyYzOjg4QzQ5OjcBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQcIBgUEA//EADYQAQABAwEECAMFCQAAAAAAAAABAgMEEQUGQWEHEiEiMVFVkxcycRMUI0KBCBUkM1JikeHw/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANwCQAAAAAAAAAAA1AAAAAAAAAAAAAAAFABJAAAAAAAAAAAAAAAAAAAAAAAAAAABQASQAAAAAAAAAAAAAAAAAAAAAAAAAAAUAEAAAAAAAAAAAAAAAAAAAAAAAAAAABQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAFABAkAAAAAAAAAAAeb3331wtl2KLmRNdVVyqabVm1FM3bkx80xEzEREaxrM+cPs7V2jZxse9fvVxRZs26rlyqeFMcIjjM8I4y5J353pvbSz7uTc1ijWbdi1wtY8T3afrxmeMzIOkdxOkTA2rNyizFyzft09eqzf6vXm3rp16JiZ60RMxE8YewcXbv7ayMLLs5WPX1btqvrRr201U+FVFUcYmNYl11upvDj5+FZyrE925Heome9bux89urnE/5jSeIPrgAAAAAAAAAAAoAJISAAAAAAAAAAzvpl36jZ+H9hYr0zsmiYo0nvWbHhVd5T4xTz1ngDO+nTfr7zkTs/Hr/hsa5+PVTPdvZMfl500dv1q18olkqoA9/wBEG/M7Nzfs71U/csmqii9rPZZueFN6I5fm8489IeAAdw01RMRMTExMaxMdsTHJWP8AQPv1F6zGzcmv8ezRM4tVU9tzHpjtt85o4f2/RsAAAAAAAAAAAKACSAAAAAAAABM/95A+XvNt3HwcK/lX50t2qNerGnWrrnspt085nSHIu8u3MjOzL+Vfq1uXa9dNe7RRHy0U8ojSHsOmPfn94Zn2NivXBxaqqbc0z3b97wqvc48Yp5azxZ2AAAAD9Gz827YvWr1muq3dtV03LddPjTXE6xP+nW24G9lraeBbyKdKbtP4eRaif5d+I7f0nxjlP1cgvWdGu+NzZm0KLvbVjXerayrcfmta/PEf1U+MfrHEHWw/li5Nu7bt3LddNdq5RTcoronWmuiqNYmJ5v6gAAAAAAAAoAIAAAAAAAAyjp430rxcanAsVTTfy7c1Xa48aMTXqzEc65iY+kT5w1d4DpP6NaNqzYu0ZEWMm1TNrrVUTct3LMzrFNUROsTEzOk85/QOXBsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bh8AMz1LG9m4DGxsnwAzPUsb2bhHQBmepY3s3AY2NkjoAzPUsb2bh8AMz1LG9m4D9f7P++lfWnZV+qZpmK7uJVPbNOneuWvp41R5dvnDc2YdG3RNGzcucu/lU371NFVFmm3bmi3b60aVVzMzrVOmsRHDWfHhp4AAAAAAAAKACAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAIAAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkhIAAAAAAAAAAAAAAAAAAAAAAAAAACgAkgAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="popup" *ngIf="popupActive">
+  <div class="main-popup">
+    <img src="https://cdn-icons-png.flaticon.com/512/75/75519.png" alt="" class="close" (click)="popupActive = false">
+    <div class="flex">
+      <h6>Organization Name: </h6>
+      <input class="nameOrg" type="text" [(ngModel)]="firstV">
+    </div>
+    <div class="line small" style="margin-top: 10px"></div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="content">
+          <h5>Tracking</h5>
+          <div class="flex">
+            <h6>In Use: </h6>
+            <input type="number" [(ngModel)]="secondV">
+          </div>
+          <div class="flex top">
+            <h6>Assigned: </h6>
+            <input type="number" [(ngModel)]="thirdV">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="content">
+          <h5>Protection</h5>
+          <div class="flex">
+            <h6>In Use: </h6>
+            <input type="number" [(ngModel)]="fourthV">
+          </div>
+          <div class="flex top">
+            <h6>Assigned: </h6>
+            <input type="number" [(ngModel)]="fifthV">
+          </div>
+        </div>
+      </div>
+      <button mat-icon-button (click)="save($event)" class="save">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

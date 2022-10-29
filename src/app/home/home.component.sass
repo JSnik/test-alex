@@ -1,0 +1,256 @@
+*
+  font-family: sans-serif !important
+
+.home
+  height: 100%
+  background: #f1f1f1
+  padding: 20px
+  min-height: 100vh
+.block
+  height: 100%
+
+button
+  background: #4999fc
+  color: white
+  border-radius: 3px !important
+  width: fit-content
+  padding: 0px 15px
+  height: unset
+header
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.left-content
+  display: flex
+  align-items: center
+
+.search
+  width: 240px
+  height: 28px
+  margin-left: 55px
+  border: 2px solid #f2f5f9
+  padding-left: 15px
+  outline: none !important
+
+  &:hover
+    outline: none
+    border: 2px solid #f2f5f9
+
+    &:focus
+      outline: none
+      border: 2px solid #f2f5f9
+
+      &:focus-visible
+        outline: none
+        border: 2px solid #f2f5f9
+
+h3
+ font-weight: 700
+ font-size: 20px
+ margin: 0px
+
+.line
+  background: rgba(0, 0, 0, 0.1)
+  height: 1px
+  width: 100%
+  margin: 15px 0px 0px 0px
+
+
+.row
+  margin: 0px -15px !important
+
+.col-restyle
+  padding: 15px !important
+
+  .header-card
+    display: flex
+    align-items: center
+    .avatar
+      margin-right: 13px
+    img
+      width: 35px
+      height: 35px
+      border-radius: 50%
+
+
+.mat-card-header-text
+  display: none !important
+
+.header-card-flex
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.small
+  margin-top: 0px
+  margin-bottom: 14px
+
+.three-dots
+  display: flex
+  justify-content: normal
+  margin-right: -10px
+  cursor: pointer
+  img
+    transform: rotate(90deg)
+    height: 23px
+
+.down-drop
+  position: relative
+  .drop
+    background: white
+    border-radius: 5px
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5)
+    position: absolute
+    z-index: 9999999999
+    padding: 0px 12px
+    div
+      white-space: nowrap
+      display: flex
+      align-items: center
+      padding: 5px 1px
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+      transition: 0.3s
+      cursor: pointer
+      &:hover
+        transform: scale(1.04)
+      img
+        height: 15px
+        margin-right: 8px
+      span
+        font-size: 11px
+.last-border
+  border-bottom: unset !important
+
+.drop-third
+  right: -10px !important
+
+h5
+  font-size: 16px !important
+  font-weight: 700
+h6
+  font-size: 14px !important
+  font-weight: 700
+.flex
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+
+.first
+  margin-bottom: 11px
+.cont
+  margin-top: -6px
+
+.value
+  .counter
+    display: flex
+    flex-direction: column
+    .second-arrow
+      transform: rotate(180deg)
+      margin-top: -7px
+    img
+      width: 20px
+      cursor: pointer
+.costum-input
+  outline: none !important
+  border-bottom: 1px solid rgba(0,0,0,0.145)
+  border-left: unset
+  border-right: unset
+  border-top: unset
+  width: 40px
+  justify-content: center
+  display: flex
+  align-items: center
+  &:hover,
+  &:focus
+    outline: none !important
+    border-bottom: 1px solid rgba(0,0,0,0.145)
+    border-left: unset
+    border-right: unset
+    border-top: unset
+.value
+  position: relative
+  .counter
+    position: absolute
+    right: -6px
+    bottom: 1px
+.popup
+  background: rgba(0,0,0,0.2)
+  position: fixed
+  z-index: 10
+  top: 0px
+  bottom: 0px
+  left: 0px
+  right: 0px
+  .main-popup
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 99999999999
+    width: 600px
+    height: 300px
+    background: white
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3)
+    border-radius: 8px
+    padding: 20px
+
+
+.popup
+  input
+    border: 1px solid rgba(0,0,0,0.4)
+    outline: none
+    padding-left: 10px
+
+
+.top
+  margin-top: 10px
+.close
+  float: right
+  margin-bottom: 15px
+  height: 20px
+  cursor: pointer
+.save
+  margin: auto
+  margin-top: 20px
+  width: 100px
+  display: flex
+  justify-content: center
+
+.bot
+  margin-top: 0px !important
+.none
+  display: none
+
+.main-h
+  display: block
+@media(max-width: 767px)
+  .bot
+    margin-top: 15px !important
+
+  .first
+    margin-bottom: 8px !important
+  header
+    flex-direction: column !important
+    align-items: center !important
+    .btn-add
+      margin-top: 15px
+  .main-popup
+    height: unset !important
+    width:  unset !important
+
+  .nameOrg
+    margin-left: 8px !important
+
+@media (max-width: 575px)
+    h3
+      font-size: 16px !important
+
+@media (max-width: 540px)
+  .none
+    display: block !important
+  .main-h
+    display: none !important
+  .search
+    margin-left: unset !important
